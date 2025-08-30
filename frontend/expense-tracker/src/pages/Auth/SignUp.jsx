@@ -17,6 +17,26 @@ const SignUp = () => {
     // handle SignUp form submit
     const handleSignUp = async (e) => {
         e.preventDefault();
+
+        let profileImageUrl = "";
+
+        if (!fullName) {
+            setError("Please enter your name.");
+            return;
+        }
+
+        if (!validateEmail(email)) {
+            setError("Please enter a valid email address.");
+            return;
+        }
+
+        if (password.length < 8) {
+            setError("Password must be at least 8 characters long.");
+            return;
+        }
+
+        setError("");
+        // sign up api call
     }
 
     return (

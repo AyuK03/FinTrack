@@ -10,7 +10,7 @@ const Login = () => {
     const [error, setError] = useState(null);
 
     const navigate = useNavigate();
-    
+
     // handle Login form submit
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -19,8 +19,8 @@ const Login = () => {
             return;
         }
 
-        if (!password) {
-            setError("Please enter your password.");
+        if (password.length < 8) {
+            setError("Password must be at least 8 characters long.");
             return;
         }
 
